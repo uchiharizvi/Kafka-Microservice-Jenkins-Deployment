@@ -1,6 +1,8 @@
-package com.example.demo;
+package com.kavish;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,8 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAutoConfiguration
 public class AppController {
 
-	@RequestMapping("/")
-	String home() {
-		return "hello Coder";
+	@PostMapping("v1/write")
+	public String writeToMessageQueue(@RequestBody String payload){
+
+		return "";
 	}
 }
